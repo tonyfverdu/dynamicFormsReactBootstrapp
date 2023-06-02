@@ -1,0 +1,15 @@
+@use '../../myvariables' as v;
+@use '../../layouts' as l;
+@use '../../designElement' as d;
+
+
+.contLabelElement {
+  @include l.layoutFlexboxRowCenter;
+  justify-content: flex-start;
+
+  &>.labelElement {
+    @include d.configurationLabel (v.$colorTextIni, 0.8rem);
+    margin: 0%;
+    padding: 0.3%;
+  }
+}

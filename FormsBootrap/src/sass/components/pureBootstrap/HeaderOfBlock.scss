@@ -1,0 +1,24 @@
+@use '../../myvariables' as v;
+@use '../../layouts' as l;
+@use '../../designElement' as d;
+
+
+.contTitleOfBlock {
+  @include l.layoutFlexboxRowCenter;
+  background-color: v.$backgroundColorDunkelGray4T;
+
+  &>.headerOfBlock {
+    @include d.desigHeader (transparent);
+    justify-content: flex-start;
+    margin: 0%;
+    padding: 0.3%;
+    padding-left: 0.5%;
+
+    &>.titleOfBlock {
+      @include d.desig_H_element2 (v.$colorTextIni, 0.9rem);
+      margin: 0%;
+      padding: 0%;
+      text-align: left;
+    }
+  }
+}

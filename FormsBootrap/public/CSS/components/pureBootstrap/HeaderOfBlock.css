@@ -1,0 +1,37 @@
+.contTitleOfBlock {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: rgba(63, 63, 63, 0.6);
+}
+.contTitleOfBlock > .headerOfBlock {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0% auto;
+  padding: 2% auto;
+  background-color: transparent;
+  justify-content: flex-start;
+  margin: 0%;
+  padding: 0.3%;
+  padding-left: 0.5%;
+}
+.contTitleOfBlock > .headerOfBlock > .titleOfBlock {
+  color: rgb(9, 9, 9);
+  text-align: left;
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin: 1% auto;
+  text-shadow: -4px -3px 4px rgba(0, 0, 0, 0.39), 2px 3px 4px rgba(0, 0, 0, 0.3);
+  margin: 0%;
+  padding: 0%;
+  text-align: left;
+}
+
+/*# sourceMappingURL=HeaderOfBlock.css.map */

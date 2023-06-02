@@ -1,0 +1,16 @@
+@use '../../myvariables' as v;
+@use '../../layouts' as l;
+@use '../../neumorphismus' as n;
+@use '../../designElement' as d;
+
+
+.contElement {
+  @include l.layoutFlexboxRowCenter;
+  @include n.neuMorphismus3;
+  flex-wrap: wrap;
+  border-radius: 9px;
+  background-color: v.$backgroundColorIniWhiteT;
+
+
+
+}
