@@ -1,9 +1,15 @@
 import React, { useState } from 'react'
 import HeaderComponent from './components/HeaderComponent.jsx'
-/*  ****  Pure Bootstrap HTML Elmenets Componets **** */
+
+/*  ****  Pure Bootstrap HTML Elements Components **** */
 import TextElement_PB from './components/pureBoostrap/TextElement_PB.jsx'
 import SelectElement_PB from './components/pureBoostrap/SelectElement_PB.jsx'
+
+/*  ****  Forms and Blocks components            **** */
+import FormSurvey from './components/Forms/FormSurvey.jsx'
 import FormExample_PB from './components/pureBoostrap/FormExample_PB.jsx'
+import DatosEpidemiologicosBlock from './components/FormsBlocks/DatosEpidemiologicosBlock.jsx'
+
 /*  ****************************************************/
 import { BsXSquareFill } from 'react-icons/bs'
 import reactLogo from './assets/react.svg'
@@ -17,6 +23,64 @@ function App() {
   const title = 'MERN App: React, Bootstrap, NodeJS, Express and MongoDB';
   const titleMemoListHeader = 'Dynamic Forms with Bootstrap from JSON';
   const subtitleMemoListHeader = 'MERN App (Bootstrap-React-NodeJS-Express-MongoDB)';
+  const titleOfBlocksForm = [
+    {
+      "block": 1,
+      "titleBlock": "DATOS DEL DECLARANTE",
+      "labelBlock": "Datos del Paciente y Centro de Trabajo"
+    },
+    {
+      "block": 2,
+      "titleBlock": "ASIGNACIÓN DEL CASO (REFERIDO AL TERRITORIO DE RIESGO)",
+      "labelBlock": "Datos del Municipio, Departamento y Centro de Trabajo"
+    },
+    {
+      "block": 3,
+      "titleBlock": "DATOS DE IDENTIFICACIÓN",
+      "labelBlock": "Datos del Paciente"
+    },
+    {
+      "block": 4,
+      "titleBlock": "DATOS DE ADMINISTRACIÓN",
+      "labelBlock": "Datos del Centro de Trabajo y del Profesional Asignado"
+    },
+    {
+      "block": 5,
+      "titleBlock": "DATOS EPIDEMIOLÓGICOS",
+      "labelBlock": "Datos de Epidemiológia. Vacunas"
+    },
+    {
+      "block": 6,
+      "titleBlock": "DATOS DE LABORATORIO",
+      "labelBlock": "Investigación de toxina botulínica"
+    }
+  ]
+
+  const declarante = {
+    dateOfDeclaration: "01-01-2023",
+    declarant: "ORTUNO GARCIA, LAURA MARIA",
+    jobCenter: "CENTRO DE SALUD DE QUART DE POBLET",
+    telephone: "962764565",
+    municipality: "QUART DE POBLET",
+    departament: "MANISES",
+    closedSurvey: "NO",
+    originOfDeclaration: "SIA",
+    pointOfDeclaration: "070601"
+  }
+  const administration = {
+    assignedJobCenter: {
+      name: "CENTRO DE SALUD DE QUART DE POBLET",
+      dissabled: true,
+      readonly: true,
+      resize: "none"
+    },
+    assignedProfessional: {
+      name: "BEATRIZ OGALLA SUAREZ",  //  Mirar en separar name and surname
+      dissabled: true,
+      readonly: true,
+      resize: "none"
+    }
+  }
 
   //Usestates variables: toggleHeader, 
   const [toggleHeader, setToggleHeader] = useState(true);
@@ -29,18 +93,17 @@ function App() {
 
   return (
     <div className="container-fluid contApp">
-      {/* <div className="contIconExit" onClick={(ev) => handleonClickExit(ev)}>
+      <div className="contIconExit" onClick={(ev) => handleonClickExit(ev)}>
         <BsXSquareFill />
       </div>
       <HeaderComponent
         title={titleMemoListHeader}
         subtitle={subtitleMemoListHeader}
       />
-
-      <div className="container-fluid contCentral">
+      <div className="contCentral container-fluid">
         {toggleHeader &&
-          <div className="container row contLogosHeader">
-            <div className="col-sm-4 contLogos">
+          <div className="container-fluid row py-3 contLogosHeader">
+            <div className="col-12 col-lg-3 d-flex justify-content-between contLogos">
               <figure className="MERNFigure">
                 <img className="imgLogo" src={`./src/assets/images/logos/React_logo.png`} alt='Logo React' />
               </figure>
@@ -57,12 +120,24 @@ function App() {
                 <img className="imgLogo" src={`./src/assets/images/logos/mongoDB.webp`} alt='Logo MongoDB' />
               </figure>
             </div>
-            <div className="col-sm-8 headerPrincipal">
+            <div className="col-12 col-lg-8 d-flex justify-content-center py-3 headerPrincipal">
               <h2>{title}</h2>
             </div>
           </div>
         }
-      </div> */}
+      </div>
+
+      <main className="container-fluid my-2">
+        <FormSurvey
+          survey={"Epidemiológica"}
+          disease={"Varicela"}
+          declarante={declarante}
+          administration={administration}
+        />
+      </main>
+
+
+
       {/* <form>
           {/* Input email * /}
           <div className="row mb-1">
@@ -98,10 +173,26 @@ function App() {
           <button type="submit" className="btn btn-primary">Submit</button>
         </form> */}
 
-      <FormExample_PB
+      {/* <section className="container">
+        <div className="row">
+          <div className="col-12">
+            <FormExample_PB
+              titleOfBlock={titleOfBlocksForm[5].titleBlock}
+              labelOfBlock={titleOfBlocksForm[5].labelBlock}
+            />
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-12">
+            <DatosEpidemiologicosBlock
+              titleOfBlock={titleOfBlocksForm[4].titleBlock}
+              labelOfBlock={titleOfBlocksForm[4].labelBlock}
+            />
+          </div>
+        </div>
+      </section> */}
 
-      />
-      
+
       <footer className="container-fluid py-1 text-center bg-dark text-white">
         <p>Lorem, ipsum dolor.</p>
       </footer>

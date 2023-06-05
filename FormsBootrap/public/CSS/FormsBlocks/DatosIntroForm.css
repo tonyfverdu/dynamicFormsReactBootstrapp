@@ -1,0 +1,14 @@
+.spanIcon {
+  width: 2.3rem;
+  height: 2.3rem;
+}
+.spanIcon > .iconsClass {
+  background-color: rgba(167, 166, 166, 0.3);
+  width: 1.9rem;
+  height: 1.9rem;
+  padding: 0.1rem;
+  margin: 0.1rem;
+  border-radius: 50%;
+}
+
+/*# sourceMappingURL=DatosIntroForm.css.map */

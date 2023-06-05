@@ -1,0 +1,38 @@
+@use '../../myvariables' as v;
+@use '../../layouts' as l;
+@use '../../designElement' as d;
+
+
+.contElementTelef {
+  @include l.layoutFlexboxRowCenter;
+  height: auto;
+  padding: 1%;
+  margin: 0.5%;
+  border-radius: 5px;
+  border: 1px solid v.$backgroundColorIniT3;
+
+  &>.labelOfForm {
+    @include d.configurationLabel (v.$colorTextIni, 0.7rem);
+    text-align:left;
+    height: 1.2rem;
+    padding: 0.3%;
+    margin: 0.5% 0%;
+    margin-right: 2%;
+  }
+
+  &>.contInputTelef {
+    @include d.configurationText1 (v.$backgroundColorDunkelGray5, 0.65rem);
+    text-align: left;
+    height: 1.2rem;
+    padding: 0.3%;
+    padding-left: 1%;
+    margin: 0.5% 0%;
+    transition: all ease 0.45s;
+
+    &:hover, &:focus {
+      cursor: pointer;
+      border-radius: 3px;
+      border: 2px solid v.$colorbackgroudneuOrange;
+    }
+  }
+}

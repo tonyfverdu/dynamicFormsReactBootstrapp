@@ -2,11 +2,11 @@ import React from 'react'
 import '../../sass/components/pureBootstrap/LabelElement_PB.scss'
 
 
-function LabelElement_PB({textOfLabel, htmlForm}) {
+function LabelElement_PB({textOfLabel}) {
 
   return (
     <div className="contLabelElement mb-2">
-      <label htmlForm={htmlForm} className="labelElement label label-default">{textOfLabel}</label>
+      <label className="labelElement label label-default">{textOfLabel}</label>
     </div>
   )
 }

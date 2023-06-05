@@ -9,19 +9,18 @@ function ListaHeridas_Heces_PB() {
       <div className="col-12 col-md-4 col-lg-6">
         <LabelElement_PB
           textOfLabel={"Aislamiento de C. botulinum"}
-          htmlForm={""}
         />
       </div>
       <div className="col-6 col-md-4 col-lg-3">
         <SelectElement_PB
-          textLabel={"Herida"}
+          selectTextLabel={"Herida"}
           disabled={false}
           optionsValues={["Leve", "Superficial", "Moderada", "Grave", "Muy Grave"]}
         />
       </div>
       <div className="col-6 col-md-4 col-lg-3">
         <SelectElement_PB
-          textLabel={"Heces"}
+          selectTextLabel={"Heces"}
           disabled={false}
           optionsValues={["Liquida", "Semiliquida", "Normal", "Sangrado"]}
         />

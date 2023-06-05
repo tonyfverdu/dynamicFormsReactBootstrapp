@@ -21,7 +21,7 @@
   color: rgb(9, 9, 9);
   margin: 0% 2%;
   padding: 1%;
-  text-align: left;
+  text-align: right;
   width: auto;
   height: auto;
   min-height: 1rem;
@@ -68,7 +68,8 @@
 }
 .contSelect > .select_B:hover, .contSelect > .select_B:focus {
   cursor: pointer;
-  border: 1px solid rgb(213, 140, 4);
+  color: red;
+  border: 2px solid rgb(213, 140, 4);
 }
 
 @media only screen and (min-width: 992px) {

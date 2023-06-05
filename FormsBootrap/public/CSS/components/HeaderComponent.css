@@ -23,8 +23,8 @@
   animation: change-color3 18s ease-in-out alternate infinite;
 }
 .containerHeaderTitle > img {
-  width: 38%;
-  height: 38%;
+  width: 36%;
+  height: 36%;
   margin: 0% auto;
   z-index: 20;
   pointer-events: none;

@@ -3,7 +3,7 @@ import '../../sass/components/pureBootstrap/TextElement_PB.scss'
 
 
 function TextElement_PB({ name, labelElement, elementRequired, response, placeholder, size, elementID, valueOfText, setValueOfText}) {
-  const [responseSelect, setResponseSelect] = useState(response[0])
+  const [responseText, setResponseText] = useState(response[0])
 
   useEffect(() => {
     setValueOfText(placeholder)
@@ -15,7 +15,7 @@ function TextElement_PB({ name, labelElement, elementRequired, response, placeho
   }
 
   return (
-    <div className="contElementText container-fluid flex-column flex-lg-row p-1">
+    <div className="contElementText container-fluid flex-row flex-lg-row p-1">
       <label htmlFor={elementID} className="labelOfForm">{labelElement}</label>
       <input name={name} type="text" className="contInputText" autoComplete="off" id={elementID} placeholder={placeholder} onChange={(ev) => handleChange(ev)}
         value={valueOfText} size={size} required={elementRequired} />
@@ -26,5 +26,5 @@ function TextElement_PB({ name, labelElement, elementRequired, response, placeho
 export default TextElement_PB;
 
 /*
-
+  falta disabled
 */

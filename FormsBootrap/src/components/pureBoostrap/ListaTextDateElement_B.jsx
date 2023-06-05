@@ -6,7 +6,7 @@ import LabelElement_PB from './LabelElement_PB.jsx'
 import "../../sass/components/pureBootstrap/ListaTextDateElement_B.scss";
 
 
-function ListaTextDateElement_B({ analisis }) {
+function ListaTextDateElement_B({ selectTextLabel, selectDisabled, optionsValues }) {
   const [valueOfText, setValueOfText] = useState("")
   const [valueOfDate, setValueOfDate] = useState("01/01/2023")
 
@@ -15,8 +15,8 @@ function ListaTextDateElement_B({ analisis }) {
       <div className="contElement row p-1 mb-1 ms-1">
         <div className="col-12 col-md-4 col-lg-3">
           <SelectElement_PB
-            textLabel={analisis}
-            disabled={false}
+            selectTextLabel={selectTextLabel}
+            disabled={selectDisabled}
             optionsValues={["Negativo", "Positivo"]}
           />
         </div>

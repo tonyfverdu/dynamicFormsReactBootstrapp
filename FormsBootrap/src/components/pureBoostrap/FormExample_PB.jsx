@@ -1,54 +1,73 @@
 import React from 'react'
-import LabelElement_B from './LabelElement_PB.jsx'
+import LabelElement_PB from './LabelElement_PB.jsx'
 import HeaderOfBlock from './HeaderOfBlock.jsx'
-import ListaTextDateElement_B from './ListaTextDateElement_B.jsx'
+import ListaTextDateElement_PB from './ListaTextDateElement_B.jsx'
 import ListaHeridas_Heces_PB from './ListaHeridas_Heces_PB.jsx'
 import '../../sass/components/pureBootstrap/FormExample_PB.scss'
 
 
-function FormExample_PB() {
-  const titleOfBlock = "DATOS DE LABORATORIO"
-  const labelOfBlock = "Investigacion de toxina botulinica"
-
+function FormExample_PB({ titleOfBlock, labelOfBlock }) {
   return (
-    <div className="container d-flex flex-row justify-content-center align-items-center my-3 py-2 border border-2 
+    <section className="container-fluid d-flex flex-column justify-content-center align-items-center my-3 py-2 border border-2 
     border-dark-subtle border-opacity-75 rounded">
-      <form id="formulario" className="formular row">
+      <div className="container-fluid row">
         <div className="col-12 mb-1">
           <HeaderOfBlock
             titleOfBlock={titleOfBlock}
           />
         </div>
         <div className="col-12">
-          <LabelElement_B
+          <LabelElement_PB
             textOfLabel={labelOfBlock}
-            htmlForm={""}
           />
         </div>
+      </div>
+      <div className="container-fluid row">
         <div className="col-12 mb-1">
-          <ListaTextDateElement_B
-            analisis={"Suero"}
-          />
-          <ListaTextDateElement_B
-            analisis={"Heces"}
-          />
-          <ListaTextDateElement_B
-            analisis={"Alimento"}
+          <ListaTextDateElement_PB
+            selectTextLabel={"Suero"}
+            selectDisabled={false}
+            optionsValues={["Negativo", "Positivo"]}
           />
         </div>
-        <div className="col-12 mb-2">
+      </div>
+      <div className="container-fluid row">
+        <div className="col-12 justify-content-end mb-1">
+          <ListaTextDateElement_PB
+            selectTextLabel={"Heces"}
+            selectDisabled={false}
+            optionsValues={["Negativo", "Positivo"]}
+          />
+        </div>
+      </div>
+      <div className="container-fluid row">
+        <div className="col-12 justify-content-end mb-1">
+          <ListaTextDateElement_PB
+            selectTextLabel={"Alimentación"}
+            selectDisabled={false}
+            optionsValues={["Negativo", "Positivo"]}
+          />
+        </div>
+      </div>
+
+      <div className="container-fluid my-2 row">
+        <div className="col-12">
           <ListaHeridas_Heces_PB
 
           />
         </div>
-        <div className="col-12">
-          <div className="d-grid gap-2 d-md-flex justify-content-md-end">
-            <button className="btn btn-outline-danger fs-6" type="delete" id="btnEdelete">Delete</button>
-            <button className="btn btn-outline-secondary w-auto fs-6" type="submit" id="btnEnviar">Submit</button>
-          </div>
+      </div>
 
+      {/* <div className="col-12 mb-2">
+       
+      </div>
+      <div className="col-12">
+        <div className="d-grid gap-2 d-md-flex justify-content-md-end">
+          <button className="btn btn-outline-danger fs-6" type="delete" id="btnEdelete">Delete</button>
+          <button className="btn btn-outline-secondary w-auto fs-6" type="submit" id="btnEnviar">Submit</button>
         </div>
-      </form>
+
+      </div> */}
 
       {/* <div className="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true" >
         <div className="d-flex">
@@ -57,7 +76,7 @@ function FormExample_PB() {
         </div>
       </div> */}
 
-    </div>
+    </section >
   )
 }
 

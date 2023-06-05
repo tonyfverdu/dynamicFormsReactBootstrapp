@@ -5,19 +5,16 @@
 
 .contElementText {
   @include l.layoutFlexboxRowCenter;
-  justify-content: flex-start;
   height: auto;
   padding: 1%;
   margin: 0.5%;
   border-radius: 5px;
-  border: 1px solid v.$backgroundColorIniT2;
+  border: 1px solid v.$backgroundColorIniT3;
 
   &>.labelOfForm {
     @include d.configurationLabel (v.$colorTextIni, 0.7rem);
     text-align:left;
-    width: auto;
-    height: auto;
-    min-height: 1rem;
+    height: 1.2rem;
     padding: 0.3%;
     margin: 0.5% 0%;
     margin-right: 2%;
@@ -26,16 +23,16 @@
   &>.contInputText {
     @include d.configurationText1 (v.$backgroundColorDunkelGray5, 0.65rem);
     text-align: left;
-    width: 16rem;
-    height: auto;
-    min-height: 1rem;
+    height: 1.2rem;
     padding: 0.3%;
+    padding-left: 1%;
     margin: 0.5% 0%;
-    transition: all ease 0.35s;
+    transition: all ease 0.45s;
 
     &:hover, &:focus {
       cursor: pointer;
-      border: 1px solid v.$colorbackgroudneuOrange;
+      border-radius: 3px;
+      border: 2px solid v.$colorbackgroudneuOrange;
     }
   }
 }
