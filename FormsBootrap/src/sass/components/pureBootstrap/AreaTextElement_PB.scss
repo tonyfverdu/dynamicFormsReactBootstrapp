@@ -3,27 +3,27 @@
 @use '../../designElement' as d;
 
 
-.contElementText {
+.contElementAreaText {
+  @include l.layoutFlexboxColumCenter;
+  justify-content: flex-start;
+  align-items: flex-start;
   height: auto;
   padding: 1%;
   margin: 0.5%;
-
-  border-radius: 3px;
+  border-radius: 5px;
   border: 1px solid v.$backgroundColorIniT3;
 
   &>.labelOfForm {
     @include d.configurationLabel (v.$colorTextIni, 0.7rem);
-    text-align:left;
-    width: auto;
+    text-align: left;
     height: 1.2rem;
     padding: 0.3%;
     margin: 0.5% 0%;
     margin-right: 2%;
   }
 
-  &>.contInputText {
+  &>.areaTextActiv {
     @include d.configurationText1 (v.$backgroundColorDunkelGray5, 0.65rem);
-    width: auto;
     text-align: left;
     height: 1.2rem;
     padding: 0.3%;
@@ -31,23 +31,27 @@
     margin: 0.5% 0%;
     transition: all ease 0.45s;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       cursor: pointer;
-      max-height: 1.2rem;;
       border-radius: 3px;
       border: 2px solid v.$colorbackgroudneuOrange;
     }
   }
+  &>.areaTextNotActiv {
+    @extend .areaTextActiv;
+    color: v.$backgroundColorDunkelGray2;
+    font-weight: 700;
+    background-color: transparent;
+    border: none;
+
+    &:hover,
+    &:focus {
+      cursor:default;
+      border: none;
+    }
+  }
+
+ 
+
 }
-
-// @media only screen and (min-width: 768px) {
-//   .contElementText >.contInputText {
-//     width: 12rem;
-//   }
-// }
-
-// @media only screen and (min-width: 992px) {
-//   .contElementText >.contInputText {
-//     width: 14rem;
-//   }
-// }

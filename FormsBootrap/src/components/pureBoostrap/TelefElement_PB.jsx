@@ -16,8 +16,8 @@ function TelefElement_PB({ name, labelElement, elementRequired, response, placeh
 
   return (
     <div className="contElementTelef container-fluid flex-row flex-lg-row p-1">
-      <label htmlFor={elementID} className="labelOfForm">{labelElement}</label>
-      <input name={name} type="tel" className="contInputTelef" autoComplete="off" id={elementID} pattern="[0-9]{2}-[0-9]{3}-[0-9]{4}" placeholder={placeholder}
+      <label htmlFor={elementID} className="labelOfForm col-form-label">{labelElement}</label>
+      <input name={name} type="tel" className="form-control contInputTelef rounded-0" autoComplete="off" id={elementID} pattern="[0-9]{2}-[0-9]{3}-[0-9]{4}" placeholder={placeholder}
         onChange={(ev) => handleChange(ev)} value={valueOfTelephone} size={size} maxLength="12" required={elementRequired} list="defaultTels" />
       <datalist id="defaultTels">
         <option value="96-111-1111"></option>

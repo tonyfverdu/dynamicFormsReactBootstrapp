@@ -16,8 +16,8 @@ function NumberElement_PB({ name, labelElement, elementRequired, response, place
 
   return (
     <div className="contElementNumber container-fluid flex-row flex-lg-row p-1">
-      <label htmlFor={elementID} className="labelOfForm">{labelElement}</label>
-      <input name={name} type="number" className="contInputNumber" id={elementID} placeholder={placeholder} onChange={(ev) => handleChange(ev)}
+      <label htmlFor={elementID} className="labelOfForm col-form-label">{labelElement}</label>
+      <input name={name} type="number" className="form-control contInputNumber rounded-0" id={elementID} placeholder={placeholder} onChange={(ev) => handleChange(ev)}
         value={valueOfNumber} min="0" max={Math.pow(10, size) - 1} size={size} required={elementRequired} />
     </div>
   )

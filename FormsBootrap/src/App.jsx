@@ -81,6 +81,25 @@ function App() {
       resize: "none"
     }
   }
+  const identPaciente = {
+    Nombre: "Nerea",
+    "Primer apellido": "Aguilar",
+    "Segundo apellido": "Berbel",
+    Sexo: "Mujer",
+    "Fecha de nacimiento": "31-06-200",
+    Edad: 23,
+    typeAge: ["días", "meses", "años"],
+    SIP: 11446102,
+    "Historia clínica": "",
+    Direccion: {
+      Calle: "CARRE ROSSINYOL 14",
+      Municipio: "QUART DE POBLET",
+      CP: 46930,
+      Provincia: "Valencia",
+      País: "España"
+    },
+    Telefonos: ["961547806", "637325223"],
+  }
 
   //Usestates variables: toggleHeader, 
   const [toggleHeader, setToggleHeader] = useState(true);
@@ -133,6 +152,7 @@ function App() {
           disease={"Varicela"}
           declarante={declarante}
           administration={administration}
+          identPaciente={identPaciente}
         />
       </main>
 

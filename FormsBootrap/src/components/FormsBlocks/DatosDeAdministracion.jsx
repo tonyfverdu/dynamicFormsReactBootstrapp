@@ -20,8 +20,8 @@ function DatosDeAdministracion({ assignedJobCenter, assignedProfessional }) {
             disabled={assignedJobCenter.disabled}
             readonly={assignedJobCenter.readonly}
             placeholder={assignedJobCenter.name}
-            row={1}
-            cols={40}
+            row={2}
+            cols={18}
             resize={assignedJobCenter.resize}
             elementID={"jobCenterAssignedId"}
             valueOfAreaText={valueAssignedJobCenter}
@@ -37,15 +37,16 @@ function DatosDeAdministracion({ assignedJobCenter, assignedProfessional }) {
             disabled={assignedProfessional.disabled}
             readonly={assignedProfessional.readonly}
             placeholder={assignedProfessional.name}
-            row={1}
-            cols={40}
-            elementID={"proAssignedId"}
-            valueOfText={valueAssignedProfessional}
-            setValueOfText={setValueAssignedProfessional}
+            row={2}
+            cols={18}
+            resize={assignedJobCenter.resize}
+            elementID={"jobCenterAssignedId"}
+            valueOfAreaText={valueAssignedProfessional}
+            setValueOfAreaText={setValueAssignedProfessional}
           />
-        </div>
       </div>
-    </section>
+    </div>
+    </section >
   )
 }
 

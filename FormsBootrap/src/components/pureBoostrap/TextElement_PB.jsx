@@ -15,9 +15,9 @@ function TextElement_PB({ name, labelElement, elementRequired, response, placeho
   }
 
   return (
-    <div className="contElementText container-fluid flex-row flex-lg-row p-1">
-      <label htmlFor={elementID} className="labelOfForm">{labelElement}</label>
-      <input name={name} type="text" className="contInputText" autoComplete="off" id={elementID} placeholder={placeholder} onChange={(ev) => handleChange(ev)}
+    <div className="contElementText container-fluid d-flex flex-row justify-content-start flex-lg-row p-1">
+      <label htmlFor={elementID} className="labelOfForm col-form-label">{labelElement}</label>
+      <input name={name} type="text" className="form-control contInputText rounded-0" autoComplete="off" id={elementID} placeholder={placeholder} onChange={(ev) => handleChange(ev)}
         value={valueOfText} size={size} required={elementRequired} />
     </div>
   )

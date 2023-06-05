@@ -17,7 +17,7 @@ function DateElement_PB({ name, labelElement, elementRequired, response, placeho
   return (
     <div className="contElementDate container-fluid p-1">
       <label htmlFor={elementID} className="labelOfForm">{labelElement}</label>
-      <input name={name} type="date" className="contInputDate" id={elementID} placeholder={placeholder}
+      <input name={name} type="date" className="contInputDate rounded-0" id={elementID} placeholder={placeholder}
         onChange={(ev) => handleChange(ev)} value={valueOfDate} required={elementRequired} />
     </div>
   )
