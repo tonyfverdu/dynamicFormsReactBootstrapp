@@ -8,10 +8,12 @@ import DatosOfDeclarante from '../FormsBlocks/DatosOfDeclarante.jsx'
 import AsignacionDelCaso from '../FormsBlocks/AsignacionDelCaso.jsx'
 import DatosDeIdentificacion from '../FormsBlocks/DatosDeIdentificacion.jsx'
 import DatosDeAdministracion from '../FormsBlocks/DatosDeAdministracion.jsx'
+import DatosDeLaboratorio from '../FormsBlocks/DatosDeLaboratorio.jsx'
 import DatosEpidemiologicos from '../FormsBlocks/DatosEpidemiologicos.jsx'
+import DatosDeVacunacion from '../FormsBlocks/DatosDeVacunacion.jsx'
 
 
-function FormSurvey({ survey, disease, declarante, identPaciente, administration, datosEpidemiologicos }) {
+function FormSurvey({ survey, disease, declarante, identPaciente, administration, datosLaboratorio, datosEpidemiologicos, datosVacunacion }) {
   const [valueCumplimentacion, setValueCumplimentacion] = useState(0)
 
   const { dateOfDeclaration, declarant, jobCenter, telephone, municipality, departament, closedSurvey, originOfDeclaration,
@@ -19,7 +21,10 @@ function FormSurvey({ survey, disease, declarante, identPaciente, administration
   const { namePatient, surname1Patient, surname2Patient, sex, dateofBirth, age, typeAge, address, SIP, h_Clínica } = identPaciente;
   const arrayIdentPaciente = Object.entries(identPaciente)
   const { assignedJobCenter, assignedProfessional } = administration
+  const { labelInvestigacion, tablaAnalisisToxinas, aislamientoToxina } = datosLaboratorio
   const { caso, tipoCaso, comunidadAutonoma, pais, clasificacionCaso } = datosEpidemiologicos
+  const { casoVacunacion, vacunado, fechaVacunacion, numDosis, presentaDocumento, tablaVacunas, vacunaContrastada, fechaInicSintomas,
+    fechaDiagnostico, anyoEPI, semanaEPI, observaciones } = datosVacunacion;
 
 
   return (
@@ -172,6 +177,31 @@ function FormSurvey({ survey, disease, declarante, identPaciente, administration
           </div>
         </div>
 
+        {/* <!--    BLOQUE: DATOS DE LABORATORIO DEL FORMULARIO   ---------------- > */}
+        <div className="accordion accordion-flush my-1" id="datosAdministracionID" >
+          <div className="accordion-item row">
+            <div className="accordion-header col-12 container mb-2" id="headingDatosLaboratorio">
+              <button className="accordion-button btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDatosLaboratorio"
+                aria-expanded="false" aria-controls="collapseDatosLaboratorio">
+                <HeaderOfBlock
+                  titleOfBlock={`DATOS DE LABORATORIO`}
+                />
+              </button>
+            </div>
+            <div id="collapseDatosLaboratorio" className="accordion-collapse collapse" aria-labelledby="headingDatosLaboratorio" >
+              <section className="row accordion-item">
+                <div className="col-12 mb-1">
+                  <DatosDeLaboratorio
+                    labelInvestigacion={labelInvestigacion}
+                    tablaAnalisisToxinas={tablaAnalisisToxinas}
+                    aislamientoToxina={aislamientoToxina}
+                  />
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+
         {/* <!--    BLOQUE: DATOS EPIDEMIOLÓGICOS DEL FORMULARIO   ---------------- > */}
         <div className="accordion accordion-flush my-1" id="datosEpidemiologicosID" >
           <div className="accordion-item row">
@@ -213,7 +243,22 @@ function FormSurvey({ survey, disease, declarante, identPaciente, administration
             </div>
             <div id="collapseDatosVacunacion" className="accordion-collapse collapse" aria-labelledby="headingDatosVacunacion" >
               <section className="row accordion-item">
-
+                <div className="col-12 mb-1">
+                  <DatosDeVacunacion
+                    casoVacunacion={casoVacunacion}
+                    vacunado={vacunado}
+                    fechaVacunacion={fechaVacunacion}
+                    numDosis={numDosis}
+                    presentaDocumento={presentaDocumento}
+                    tablaVacunas={tablaVacunas}
+                    vacunaContrastada={vacunaContrastada}
+                    fechaInicSintomas={fechaInicSintomas}
+                    fechaDiagnostico={fechaDiagnostico}
+                    anyoEPI={anyoEPI}
+                    semanaEPI={semanaEPI}
+                    observaciones={observaciones}
+                  />
+                </div>
               </section>
             </div>
           </div>

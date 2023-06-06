@@ -1,19 +1,11 @@
 import React, { useState } from 'react'
 import HeaderComponent from './components/HeaderComponent.jsx'
 
-/*  ****  Pure Bootstrap HTML Elements Components **** */
-import TextElement_PB from './components/pureBoostrap/TextElement_PB.jsx'
-import SelectElement_PB from './components/pureBoostrap/SelectElement_PB.jsx'
-
 /*  ****  Forms and Blocks components            **** */
 import FormSurvey from './components/Forms/FormSurvey.jsx'
-import FormExample_PB from './components/pureBoostrap/FormExample_PB.jsx'
-import DatosEpidemiologicosBlock from './components/FormsBlocks/DatosEpidemiologicosBlock.jsx'
 
 /*  ****************************************************/
 import { BsXSquareFill } from 'react-icons/bs'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './sass/App.scss'
 
@@ -100,6 +92,33 @@ function App() {
     },
     Telefonos: ["961547806", "637325223"],
   }
+  const datosLaboratorio = {
+    labelInvestigacion: "Investigación de toxina botulínica",
+    tablaAnalisisToxinas: [
+      {
+        analisis: "Suero",
+        resultadoAnalisis: "Negativo",
+        tipoToxinaIdent: "",
+        fechaAnalisis: "11/05/2004"
+      },
+      {
+        analisis: "Heces",
+        resultadoAnalisis: "Negativo",
+        tipoToxinaIdent: "disabled",
+        fechaAnalisis: "0/0/0000"
+      },
+      {
+        analisis: "Alimento",
+        resultadoAnalisis: "Negativo",
+        tipoToxinaIdent: "",
+        fechaAnalisis: "16/05/2004"
+      }
+    ],
+    aislamientoToxina: {
+      herida: "",
+      heces: ""
+    }
+  }
   const datosEpidemiologicos = {
     caso: ["Caso Aislado", "Brote Leve", "Brote Masivo", "Epidemia", "Pandemia"],
     tipoCaso: ["Extracomunitario", "Importado"],
@@ -109,7 +128,37 @@ function App() {
     pais: ["Portugal", "Andorra La Bella", "Francia", "Italia", "Irlanda", "Reino Unido", "Belgica", "Holanda", "Alemania",
       "Polonia", "Checoslovaquia", "Austria", "Suiza", "Noruega", "Suecia", "Finlandia", "Grecia", "Croacia", "Ucrania", "Rumania",
       "Bulgaria", "Estonia", "Turquia"],
-    clasificacionCaso: ["Error Diag", "Caso 2", "Caso 3", "Caso 4"]
+    clasificacionCaso: ["Error Diag", "Pendiente", "En Estudio", "Caso 4"]
+  }
+  const datosVacunacion = {
+    casoVacunacion: ["Sarampión", "Paperas", "Rubeola", "Rotavirus", "Viruela", "Varicela", "Fiebre amarilla", "Hepatitis A", "hepatitis B", "Gripe",
+      "Polio", "Rabia", "Enfermedad Hib", "HPV", "Tos ferina", "Tétanos"],
+    vacunado: ["SI", "NO"],
+    fechaVacunacion: "01/012007",
+    numDosis: 1,
+    presentaDocumento: ["SI", "NO"],
+    tablaVacunas: {
+      cabeceraTabla: ["Fecha Administrada", "Nombre de la vacuna", "N° dosis", "Lote", "Fecha de Caducidad", "Laboratorio", "Centro"],
+      listaVacunas: [
+        { fecha: "01/10/2010", nombre: "Sarampión", numDosis: 1, lote: "AF35V", fechaCaducidad: "12/12/2030", laboratorio: "laboratorio A", centro: "centro 1" },
+        { fecha: "12/03/2014", nombre: "Paperas", numDosis: 3, lote: "GHT4563FG", fechaCaducidad: "12/03/2024", laboratorio: "laboratorio B", centro: "centro 2" },
+        { fecha: "16/02/2015", nombre: "Rotavirus", numDosis: 1, lote: "JK8HT5", fechaCaducidad: "16/02/2019", laboratorio: "laboratorio B", centro: "centro 2" },
+        { fecha: "07/09/2017", nombre: "Varicela", numDosis: 1, lote: "KSJDL887CS", fechaCaducidad: "07/09/2027", laboratorio: "laboratorio C", centro: "centro 3" },
+        { fecha: "31/07/2018", nombre: "Hepatitis A", numDosis: 1, lote: "BVBV877ACSVG5", fechaCaducidad: "31/07/2028", laboratorio: "laboratorio A", centro: "centro 4" },
+        { fecha: "28/02/2020", nombre: "Tétanos", numDosis: 2, lote: "89SDABAHDGH5X7S", fechaCaducidad: "28/02/2031", laboratorio: "laboratorio D", centro: "centro 4" },
+      ]
+    },
+    vacunaContrastada: {
+      vacuna: "",
+      "Vacuna Contrastada": ["SI", "NO"],
+      vacunado: ["SI", "NO"],
+      fechaVacunacionContrastada: "01/01/2000"
+    },
+    fechaInicSintomas: "",
+    fechaDiagnostico: "",
+    anyoEPI: 2000,
+    semanaEPI: 20,
+    observaciones: ""
   }
 
   //Usestates variables: toggleHeader, 
@@ -162,68 +211,13 @@ function App() {
           survey={"Epidemiológica"}
           disease={"Varicela"}
           declarante={declarante}
-          administration={administration}
           identPaciente={identPaciente}
+          administration={administration}
+          datosLaboratorio={datosLaboratorio}
           datosEpidemiologicos={datosEpidemiologicos}
+          datosVacunacion={datosVacunacion}
         />
       </main>
-
-
-
-      {/* <form>
-          {/* Input email * /}
-          <div className="row mb-1">
-            <label htmlFor="exampleInputEmail1" className="form-label mx-2">Email address</label>
-            <input type="email" className="form-control-md" id="exampleInputEmail1" name="exampleInputEmail1"
-              placeholder="Example:  name@example.com" aria-describedby="emailHelp" size="25" autoFocus required />
-            <span id="emailHelp" className="form-text fs-6">We'll never share your email with anyone else.</span>
-          </div>
-          {/* Input password * /}
-          <div className="row mb-1">
-            <label htmlFor="exampleInputPassword1" className="form-label mx-2">Password</label>
-            <input type="password" className="form-control-md" id="exampleInputPassword1" name="exampleInputPassword1" size="25" aria-describedby="passwordHelp" required />
-            <span id="passwordHelpBlock" className="form-text fs-6">Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.</span>
-          </div>
-          {/* Input checkbox * /}
-          <div className="row mb-1 form-check">
-            <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-            <label className="form-check-label mx-2" htmlForm="exampleCheck1">Check me out</label>
-          </div>
-
-          {/* Input text disabled * /}
-          <div className="row mb-1">
-            <input className="form-control-sm" id="disabledInput" type="text" placeholder="Disabled input here..." disabled></input>
-          </div>
-          {/* Select Component * /}
-          <SelectElement_B
-            textLabel={"Example of Select with datalist"}
-            disabled={false}
-            optionsValues={["Madrid", "Valencia", "Sevilla", "Bilbao", "Barcelona", "Murcia", "Cuenca", "Hamburg"]}
-          />
-
-          {/* Button submit * /}
-          <button type="submit" className="btn btn-primary">Submit</button>
-        </form> */}
-
-      {/* <section className="container">
-        <div className="row">
-          <div className="col-12">
-            <FormExample_PB
-              titleOfBlock={titleOfBlocksForm[5].titleBlock}
-              labelOfBlock={titleOfBlocksForm[5].labelBlock}
-            />
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-12">
-            <DatosEpidemiologicosBlock
-              titleOfBlock={titleOfBlocksForm[4].titleBlock}
-              labelOfBlock={titleOfBlocksForm[4].labelBlock}
-            />
-          </div>
-        </div>
-      </section> */}
-
 
       <footer className="container-fluid py-1 text-center bg-dark text-white">
         <p>Lorem, ipsum dolor.</p>
@@ -232,4 +226,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

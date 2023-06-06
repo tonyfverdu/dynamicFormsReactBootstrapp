@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import TextElement_PB from '../pureBoostrap/TextElement_PB'
 import NumberElement_PB from '../pureBoostrap/NumberElement_PB'
 import SelectElement_PB from '../pureBoostrap/SelectElement_PB'
@@ -27,10 +27,6 @@ function DatosDeIdentificacion({ arrayIdentPaciente }) {
   const [valueOfPais, setValueOfPais] = useState(valueOfAddress.País)
 
   const [valueOfPhones, setValueOfPhones] = useState(arrayIdentPaciente[10][1].toString())
-
-  useEffect(() => {
-    console.log("valueOfPhones:  ", valueOfPhones, '  Tipo?  ', typeof (valueOfPhones))
-  }, [])
 
 
   return (
