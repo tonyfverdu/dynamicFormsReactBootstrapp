@@ -8,9 +8,10 @@ import DatosOfDeclarante from '../FormsBlocks/DatosOfDeclarante.jsx'
 import AsignacionDelCaso from '../FormsBlocks/AsignacionDelCaso.jsx'
 import DatosDeIdentificacion from '../FormsBlocks/DatosDeIdentificacion.jsx'
 import DatosDeAdministracion from '../FormsBlocks/DatosDeAdministracion.jsx'
+import DatosEpidemiologicos from '../FormsBlocks/DatosEpidemiologicos.jsx'
 
 
-function FormSurvey({ survey, disease, declarante, identPaciente, administration }) {
+function FormSurvey({ survey, disease, declarante, identPaciente, administration, datosEpidemiologicos }) {
   const [valueCumplimentacion, setValueCumplimentacion] = useState(0)
 
   const { dateOfDeclaration, declarant, jobCenter, telephone, municipality, departament, closedSurvey, originOfDeclaration,
@@ -18,11 +19,12 @@ function FormSurvey({ survey, disease, declarante, identPaciente, administration
   const { namePatient, surname1Patient, surname2Patient, sex, dateofBirth, age, typeAge, address, SIP, h_Clínica } = identPaciente;
   const arrayIdentPaciente = Object.entries(identPaciente)
   const { assignedJobCenter, assignedProfessional } = administration
+  const { caso, tipoCaso, comunidadAutonoma, pais, clasificacionCaso } = datosEpidemiologicos
 
 
   return (
     <form className="container border border-secondary rounded p-3 my-2">
-      <div class="form-group">
+      <div className="form-group">
 
         {/* <!--    BLOQUE: DATOS INICIO DEL FORMULARIO   ---------------- > */}
         <div className="accordion accordion-flush" id="datosInicioID" >
@@ -171,7 +173,7 @@ function FormSurvey({ survey, disease, declarante, identPaciente, administration
         </div>
 
         {/* <!--    BLOQUE: DATOS EPIDEMIOLÓGICOS DEL FORMULARIO   ---------------- > */}
-        <div className="accordion accordion-flush" id="datosEpidemiologicosID" >
+        <div className="accordion accordion-flush my-1" id="datosEpidemiologicosID" >
           <div className="accordion-item row">
             <div className="accordion-header col-12 container mb-2" id="headingDatosEpidemiologicos">
               <button className="accordion-button btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDatosEpidemiologicos"
@@ -184,7 +186,15 @@ function FormSurvey({ survey, disease, declarante, identPaciente, administration
             </div>
             <div id="collapseDatosEpidemiologicos" className="accordion-collapse collapse" aria-labelledby="headingDatosEpidemiologicos" >
               <section className="row accordion-item">
-
+                <div className="col-12 mb-1">
+                  <DatosEpidemiologicos
+                    caso={caso}
+                    tipoCaso={tipoCaso}
+                    comunidadAutonoma={comunidadAutonoma}
+                    pais={pais}
+                    clasificacionCaso={clasificacionCaso}
+                  />
+                </div>
               </section>
             </div>
           </div>

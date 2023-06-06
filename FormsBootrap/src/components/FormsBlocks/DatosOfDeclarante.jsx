@@ -119,7 +119,7 @@ function DatosOfDeclarante({ dateOfDeclaration, declarant, jobCenter, telephone,
             selectTextLabel={"Encuesta cerrada: "}
             required={true}
             disabled={false}
-            response={["NO"]}
+            response={[valueClosedSurvey]}
             optionsValues={["SI", "NO"]}
             setValue={setValueClosedSurvey}
           />
@@ -129,8 +129,9 @@ function DatosOfDeclarante({ dateOfDeclaration, declarant, jobCenter, telephone,
             selectTextLabel={"Procedencia de la declaración: "}
             required={true}
             disabled={false}
-            response={["SIA"]}
+            response={[valueOriginOfDeclaration]}
             optionsValues={["CIA", "SIA", "MVD", "SGDM", "Otro"]}
+            value={valueOriginOfDeclaration}
             setValue={setValueOriginOfDeclaration}
           />
         </div>

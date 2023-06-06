@@ -100,6 +100,17 @@ function App() {
     },
     Telefonos: ["961547806", "637325223"],
   }
+  const datosEpidemiologicos = {
+    caso: ["Caso Aislado", "Brote Leve", "Brote Masivo", "Epidemia", "Pandemia"],
+    tipoCaso: ["Extracomunitario", "Importado"],
+    comunidadAutonoma: ["Andalucía", "Aragón", "Islas Baleares", "Canarias", "Cantabria", "Castilla-La Mancha", "Castilla y León",
+      "cataluña", "Comunidad de Madrid", "Comunidad Foral de Navarra", "Comunidad Valenciana", "Extremadura", "Galicia", "País Vasco",
+      "Principado de Asturias", "Región de Murcia", "La Rioja"],
+    pais: ["Portugal", "Andorra La Bella", "Francia", "Italia", "Irlanda", "Reino Unido", "Belgica", "Holanda", "Alemania",
+      "Polonia", "Checoslovaquia", "Austria", "Suiza", "Noruega", "Suecia", "Finlandia", "Grecia", "Croacia", "Ucrania", "Rumania",
+      "Bulgaria", "Estonia", "Turquia"],
+    clasificacionCaso: ["Error Diag", "Caso 2", "Caso 3", "Caso 4"]
+  }
 
   //Usestates variables: toggleHeader, 
   const [toggleHeader, setToggleHeader] = useState(true);
@@ -153,6 +164,7 @@ function App() {
           declarante={declarante}
           administration={administration}
           identPaciente={identPaciente}
+          datosEpidemiologicos={datosEpidemiologicos}
         />
       </main>
 
