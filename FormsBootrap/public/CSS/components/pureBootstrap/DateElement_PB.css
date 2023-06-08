@@ -5,11 +5,10 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: auto;
+  justify-content: flex-start;
+  height: 2rem;
   padding: 1%;
   margin: 0.5%;
-  border-radius: 5px;
-  border: 1px solid rgba(231, 230, 230, 0.6);
 }
 .contElementDate > .labelOfForm {
   position: relative;
@@ -19,13 +18,13 @@
   color: rgb(9, 9, 9);
   margin: 0% 2%;
   padding: 1%;
-  text-align: left;
   width: auto;
-  height: auto;
-  min-height: 1rem;
+  max-width: max-content;
+  height: 1.6rem;
   padding: 0.3%;
   margin: 0.5% 0%;
-  margin-right: 2%;
+  margin-right: 5%;
+  text-align: left;
 }
 .contElementDate > .contInputDate {
   position: relative;
@@ -34,17 +33,19 @@
   font-weight: 400;
   color: rgb(39, 39, 39);
   margin: 0% auto;
-  text-align: left;
-  width: 6rem;
-  height: auto;
-  min-height: 1rem;
+  width: auto;
+  max-width: max-content;
+  height: 1.6rem;
   padding: 0.3%;
+  padding-left: 2%;
   margin: 0.5% 0%;
+  text-align: left;
+  border-radius: 6px;
   transition: all ease 0.35s;
 }
 .contElementDate > .contInputDate:hover, .contElementDate > .contInputDate:focus {
   cursor: pointer;
-  border: 1px solid rgb(213, 140, 4);
+  border: 2px solid rgb(213, 140, 4);
 }
 
 /*# sourceMappingURL=DateElement_PB.css.map */

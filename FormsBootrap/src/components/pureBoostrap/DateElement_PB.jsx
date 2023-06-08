@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import '../../sass/components/pureBootstrap/DateElement_PB.scss'
 
 
-function DateElement_PB({ name, labelElement, elementRequired, response, placeholder, elementID, valueOfDate, setValueOfDate }) {
+function DateElement_PB({ labelElement, elementRequired, response, placeholder, elementID, valueOfDate, setValueOfDate }) {
   const [responseSelect, setResponseSelect] = useState(response[0])
 
   useEffect(() => {
@@ -17,7 +17,7 @@ function DateElement_PB({ name, labelElement, elementRequired, response, placeho
   return (
     <div className="contElementDate container-fluid p-1">
       <label htmlFor={elementID} className="labelOfForm">{labelElement}</label>
-      <input name={name} type="date" className="contInputDate rounded-0" id={elementID} placeholder={placeholder}
+      <input type="date" className="form-control contInputDate rounded-0" id={elementID} placeholder={placeholder}
         onChange={(ev) => handleChange(ev)} value={valueOfDate} required={elementRequired} />
     </div>
   )

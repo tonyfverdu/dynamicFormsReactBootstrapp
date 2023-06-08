@@ -18,10 +18,10 @@ function SelectElement_PB({ selectTextLabel, required, disabled, response, optio
 
 
   return (
-    <div className="contSelect container d-flex justify-content-start">
+    <div className="contSelect container ">
       <label htmlFor="selectId" className="form-label me-2 labelOfSelect">{selectTextLabel}</label>
-      <select id={`idSelect_${selectTextLabel}`} className="form-select-sm bg-light select_B rounded-0" size="1" aria-label=".form-select-sm" 
-      disabled={disabled} required={required} value={valueSelect} onChange={(ev) => handleOnChangeSelect(ev)} >
+      <select id={`idSelect_${selectTextLabel}`} className="form-select-sm bg-light select_B rounded-0" size="1" 
+      aria-label=".form-select-sm" disabled={disabled} required={required} value={valueSelect} onChange={(ev) => handleOnChangeSelect(ev)} >
         <option value="" className="fw-bold text-secondary">Select option</option>
         {
           optionsValues.map((element, index) => <option key={index} value={element} >{element}</option>)
@@ -32,3 +32,7 @@ function SelectElement_PB({ selectTextLabel, required, disabled, response, optio
 }
 
 export default SelectElement_PB;
+
+/*
+d-flex justify-content-start
+*/

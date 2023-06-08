@@ -1,0 +1,52 @@
+@use '../../myvariables' as v;
+@use '../../layouts' as l;
+@use '../../designElement' as d;
+
+
+.contTable {
+  height: auto;
+  padding: 1%;
+  margin: 0.5%;
+
+  &>.contTableHead {
+    @include d.configurationText2(v.$colorTextIni, 0.7rem);
+    width: auto;
+    max-width: max-content;
+    height: 2rem;
+    text-align: left;
+
+    &>.contTH_Head {
+      width: auto;
+      max-width: max-content;
+      height: 2rem;
+      text-align: left;
+    }
+  }
+
+  &>.contTableBody {
+    color: v.$colorTextIni;
+    font-size: 0.65rem;
+    width: auto;
+    max-width: max-content;
+    height: 2rem;
+    text-align: left;
+
+    &>.contTR_Body {
+      width: auto;
+      max-width: max-content;
+      height: 2rem;
+      padding: 0.3%;
+      margin: 0.5% 0%;
+      margin-right: 5%;
+      transition: all ease 0.35s;
+
+      &:hover,
+      &:focus {
+        cursor: pointer;
+        font-weight: bold;
+        color: v.$colorRedNeu;
+        border: 1px solid v.$colorbackgroudneuOrange;
+      }
+    }
+  }
+}

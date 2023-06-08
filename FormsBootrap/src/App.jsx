@@ -67,7 +67,7 @@ function App() {
       resize: "none"
     },
     assignedProfessional: {
-      name: "BEATRIZ OGALLA SUAREZ",  //  Mirar en separar name and surname
+      name: "BEATRIZ OGALLA, SUAREZ",  //  Mirar en separar name and surname
       dissabled: true,
       readonly: true,
       resize: "none"
@@ -139,7 +139,7 @@ function App() {
     presentaDocumento: ["SI", "NO"],
     tablaVacunas: {
       cabeceraTabla: ["Fecha Administrada", "Nombre de la vacuna", "N° dosis", "Lote", "Fecha de Caducidad", "Laboratorio", "Centro"],
-      listaVacunas: [
+      listaElements: [
         { fecha: "01/10/2010", nombre: "Sarampión", numDosis: 1, lote: "AF35V", fechaCaducidad: "12/12/2030", laboratorio: "laboratorio A", centro: "centro 1" },
         { fecha: "12/03/2014", nombre: "Paperas", numDosis: 3, lote: "GHT4563FG", fechaCaducidad: "12/03/2024", laboratorio: "laboratorio B", centro: "centro 2" },
         { fecha: "16/02/2015", nombre: "Rotavirus", numDosis: 1, lote: "JK8HT5", fechaCaducidad: "16/02/2019", laboratorio: "laboratorio B", centro: "centro 2" },

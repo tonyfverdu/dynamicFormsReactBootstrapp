@@ -128,7 +128,6 @@ function FormSurvey({ survey, disease, declarante, identPaciente, administration
           </div>
         </div>
 
-
         {/* <!--    BLOQUE: DATOS DE IDENTIFICACIÓN DEL FORMULARIO   ---------------- > */}
         <div className="accordion accordion-flush" id="datosIdentificacionID" >
           <div className="accordion-item row">

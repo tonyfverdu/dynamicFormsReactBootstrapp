@@ -1,4 +1,3 @@
-/*   ////////////////////////////////////////       */
 .contElementNumber {
   position: relative;
   display: flex;
@@ -6,11 +5,10 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  justify-content: flex-start;
   height: 2rem;
   padding: 1%;
   margin: 0.5%;
-  border-radius: 5px;
-  border: 1px solid rgba(231, 230, 230, 0.3);
 }
 .contElementNumber > .labelOfForm {
   position: relative;
@@ -20,11 +18,13 @@
   color: rgb(9, 9, 9);
   margin: 0% 2%;
   padding: 1%;
-  text-align: left;
-  height: 1.2rem;
+  width: auto;
+  max-width: max-content;
+  height: 1.6rem;
   padding: 0.3%;
   margin: 0.5% 0%;
-  margin-right: 2%;
+  margin-right: 5%;
+  text-align: left;
 }
 .contElementNumber > .contInputNumber {
   position: relative;
@@ -33,16 +33,19 @@
   font-weight: 400;
   color: rgb(39, 39, 39);
   margin: 0% auto;
-  text-align: left;
-  height: 1.2rem;
+  width: auto;
+  max-width: max-content;
+  height: 1.6rem;
   padding: 0.3%;
   padding-left: 1%;
+  padding-left: 2%;
   margin: 0.5% 0%;
-  transition: all ease 0.45s;
+  text-align: left;
+  border-radius: 6px;
+  transition: all ease 0.35s;
 }
 .contElementNumber > .contInputNumber:hover, .contElementNumber > .contInputNumber:focus {
   cursor: pointer;
-  border-radius: 3px;
   border: 2px solid rgb(213, 140, 4);
 }
 
