@@ -6,6 +6,7 @@ import FormSurvey from './components/Forms/FormSurvey.jsx'
 
 /*  ****************************************************/
 import { BsXSquareFill } from 'react-icons/bs'
+import {todayDate} from './utils/functions.js'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './sass/App.scss'
 
@@ -134,11 +135,12 @@ function App() {
     casoVacunacion: ["Sarampión", "Paperas", "Rubeola", "Rotavirus", "Viruela", "Varicela", "Fiebre amarilla", "Hepatitis A", "hepatitis B", "Gripe",
       "Polio", "Rabia", "Enfermedad Hib", "HPV", "Tos ferina", "Tétanos"],
     vacunado: ["SI", "NO"],
-    fechaVacunacion: "01/012007",
+    fechaVacunacion: "01/01/2007",
     numDosis: 1,
     presentaDocumento: ["SI", "NO"],
     tablaVacunas: {
-      cabeceraTabla: ["Fecha Administrada", "Nombre de la vacuna", "N° dosis", "Lote", "Fecha de Caducidad", "Laboratorio", "Centro"],
+      arrayCabeceraTabla: [["Fecha Administrada", "date"], ["Nombre de la vacuna", "text"], ["N° dosis", "number"], 
+      ["Lote", "text"], ["Fecha de Caducidad", "date"], ["Laboratorio", "text"], ["Centro", "text"]],
       listaElements: [
         { fecha: "01/10/2010", nombre: "Sarampión", numDosis: 1, lote: "AF35V", fechaCaducidad: "12/12/2030", laboratorio: "laboratorio A", centro: "centro 1" },
         { fecha: "12/03/2014", nombre: "Paperas", numDosis: 3, lote: "GHT4563FG", fechaCaducidad: "12/03/2024", laboratorio: "laboratorio B", centro: "centro 2" },
@@ -152,7 +154,7 @@ function App() {
       vacuna: "",
       "Vacuna Contrastada": ["SI", "NO"],
       vacunado: ["SI", "NO"],
-      fechaVacunacionContrastada: "01/01/2000"
+      fechaVacunacionContrastada: todayDate()
     },
     fechaInicSintomas: "",
     fechaDiagnostico: "",

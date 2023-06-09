@@ -40,6 +40,11 @@
       margin-right: 5%;
       transition: all ease 0.35s;
 
+      &>td {
+        width: auto;
+        max-width: max-content;
+      }
+
       &:hover,
       &:focus {
         cursor: pointer;

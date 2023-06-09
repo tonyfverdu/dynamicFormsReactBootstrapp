@@ -39,6 +39,10 @@
   margin-right: 5%;
   transition: all ease 0.35s;
 }
+.contTable > .contTableBody > .contTR_Body > td {
+  width: auto;
+  max-width: max-content;
+}
 .contTable > .contTableBody > .contTR_Body:hover, .contTable > .contTableBody > .contTR_Body:focus {
   cursor: pointer;
   font-weight: bold;

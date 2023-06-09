@@ -13,6 +13,9 @@ function DatosDeVacunacion({ casoVacunacion, vacunado, fechaVacunacion, numDosis
   }
 
   const [toggleVacunas, setToggleVacunas] = useState(false)
+  const [toggleAddVaccines, setToogleAddVaccines] = useState(false)
+
+  const [toggleAddRow, setToggleRow] = useState(false)
 
   const [valueOfCaso, setValueOfCaso] = useState(casoVacunacion[0])
   const [valueOfVacunado, setValueOfVacunado] = useState(vacunado[1])
@@ -30,6 +33,15 @@ function DatosDeVacunacion({ casoVacunacion, vacunado, fechaVacunacion, numDosis
   const [valueOfAnyoEPI, setValueOfAnyoEPI] = useState(anyoEPI)
   const [valueOfSemanaEPI, setValueOfSemanaEPI] = useState(semanaEPI)
   const [valueOfObservaciones, setValueOfObservaciones] = useState(observaciones)
+
+  function setDeleteData() {
+    console.log("Borrando datos")
+  }
+
+  function setAddVaccine() {
+    console.log("Add Vaccine")
+  }
+
 
   return (
     <section className="container-fluid d-flex flex-wrap justify-content-start align-items-center my-1 py-1 gx-1 border border-2 
@@ -93,17 +105,32 @@ function DatosDeVacunacion({ casoVacunacion, vacunado, fechaVacunacion, numDosis
       </div>
 
       <div className="container row gx-0 mb-0 mx-1">
-        <div className="col-12 container ps-1">
-            <TableElement_PB
-              tabla={tablaVacunas}
-              toogleVariable = {toggleVacunas}
-            />
+        <div className="col-12 ps-1">
+          <TableElement_PB
+            tabla={tablaVacunas}
+            toogleResponsive={toggleVacunas}
+            toogleAddRow={toggleAddRow}
+          />
         </div>
+        {toggleAddRow &&
+          <div className="col-12">
+            <div className="container row gx-0 mb-4 mx-1">
+              <div className="col-11 offset-md-8 ">
+                <div class="btn-group" role="group" aria-label="Management Vaccines">
+                  <button type="button" class="btn btn-sm btn-outline-danger me-2" value={toggleAddRow} onClick={() => setDeleteData()}>Borrar</button>
+                  <button type="button" class="btn btn-sm btn-outline-success" value={toggleVacunas} onClick={(ev) => setAddVaccine(ev)}>Confirmar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        }
+
       </div>
+
       <div className="container row gx-0 mb-4 mx-1">
         <div className="col-11 offset-md-8 ">
           <div class="btn-group" role="group" aria-label="Management Vaccines">
-            <button type="button" class="btn btn-sm btn-outline-success me-2">Anadir Vacuna</button>
+            <button type="button" class="btn btn-sm btn-outline-primary me-2" value={toggleAddRow} onClick={() => setToggleRow(!toggleAddRow)}>Anadir Vacuna</button>
             <button type="button" class="btn btn-sm btn-outline-dark" value={toggleVacunas} onClick={() => setToggleVacunas(!toggleVacunas)}>Listar Vacunas</button>
           </div>
         </div>
